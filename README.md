@@ -11,6 +11,8 @@ unexposed
 [![Downloads][downloads-img]][stats-url]
 [![License][license-img]][license-url]
 
+**This module exposes the unexposed**: `AsyncFunction`, `GeneratorFunction`, `Generator`
+
 TL;DR
 -
 Before:
