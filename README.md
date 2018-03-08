@@ -84,6 +84,9 @@ or:
 require('unexposed')();
 ```
 
+Note that it may not be a good idea to add global variables in production code
+but it may be useful in REPL or for some experiments.
+
 Returned Objects
 -
 Currently this modules exposes:
