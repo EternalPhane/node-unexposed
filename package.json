@@ -1,6 +1,6 @@
 {
   "name": "unexposed",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Exposes the unexposed constructors like Generator, GeneratorFunction, AsyncFunction",
   "main": "index.js",
   "scripts": {
