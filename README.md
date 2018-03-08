@@ -209,7 +209,7 @@ MIT License (Expat). See [LICENSE.md](LICENSE.md) for details.
 [license-url]: https://github.com/rsp/node-unexposed/blob/master/LICENSE.md
 [travis-url]: https://travis-ci.org/rsp/node-unexposed
 [travis-img]: https://travis-ci.org/rsp/node-unexposed.svg?branch=master
-[travis-shield]: https://img.shields.io/travis/rsp/unexposed.svg?label=Travis+CI
+[travis-shield]: https://img.shields.io/travis/rsp/node-unexposed.svg?label=Travis+CI
 [circle-url]: https://circleci.com/gh/rsp/node-unexposed
 [circle-img]: https://circleci.com/gh/rsp/node-unexposed.svg
 [circle-shield]: https://img.shields.io/circleci/project/github/rsp/node-unexposed.svg?label=Circle+CI
