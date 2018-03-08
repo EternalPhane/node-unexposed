@@ -12,10 +12,51 @@ unexposed
 [![License][license-img]][license-url]
 
 JavaScript has some global objects that are not really exposed as global objects.
+I call them **unexposed objects**:
 
-It's hard to even tell what they are. Not global objects? Well, not in a sense that they're local objects. I call them **unexposed** objects.
+```js
+> x = function () {};
+[Function: x]
+> x instanceof Function;
+true
+> x = async function () {};
+[AsyncFunction: x]
+> x instanceof AsyncFunction;
+ReferenceError: AsyncFunction is not defined
+```
 
-They are usually documented under "global objects" in documentation like MDN because it's hard to classify them.
+The purpose of this module is to expose the unexposed.
+What you do with them is up to you.
+
+The question whether it is smart to use them or they should remain unexposed for eternity
+is beyond the scope of this documentation.
+
+Installation
+-
+To install in a project:
+```sh
+npm install unexposed
+```
+
+Usage
+-
+```js
+const { AsyncFunction } = require('unexposed');
+```
+
+Returned Objects
+-
+Currently this modules exposes:
+
+- `AsyncFunction`
+- `GeneratorFunction`
+- `Generator`
+
+Rationale
+-
+JavaScript has some global objects that are not really exposed as global objects.
+They are usually documented under "global objects" in documentation like MDN, anyway,
+because it's hard to classify them otherwise.
 
 For example, we have `Function` in JS Reference / Global Objects:
 
@@ -63,15 +104,47 @@ x = new (Object.getPrototypeOf(async function () {}).constructor)();
 
 which is unreadable and error prone.
 
-The purpose of this module is to expose the unexposed.
-What you do with them is up to you.
+Generators
+-
+For some context, see:
 
-Returned Objects
-----------------
-Currently this modules exposes:
+- https://www.ecma-international.org/ecma-262/6.0/#sec-generator-objects
 
-- `AsyncFunction`
-- `GeneratorFunction`
+Especially Figure 2 — Generator Objects Relationships:
+
+[![Figure 2 — Generator Objects Relationships](https://www.ecma-international.org/ecma-262/6.0/figure-2.png)](https://www.ecma-international.org/ecma-262/6.0/#sec-generator-objects)
+
+Both of those hold true:
+```js
+(function* () {}).constructor.prototype === (function* () {} ()).constructor;
+Object.getPrototypeOf(function* () {}).constructor.prototype === Object.getPrototypeOf(function* () {} ()).constructor;
+```
+
+And also:
+```js
+(function* () {}).constructor === Object.getPrototypeOf(function* () {}).constructor;
+(function* () {} ()).constructor === Object.getPrototypeOf(function* () {} ()).constructor;
+```
+
+But at the same time:
+```js
+typeof (function* () {}).constructor === 'function';
+typeof (function* () {} ()).constructor === 'object';
+```
+which means that the constructor of a generator is not a function and unlike the constructor of a generator function, you cannot really use this constructor as a constructor!
+
+This is fine:
+```js
+> new (function* () {}).constructor();
+[GeneratorFunction: anonymous]
+```
+but this is an error:
+```js
+> new (function* () {} ()).constructor();
+TypeError: (intermediate value)(...).constructor is not a constructor
+```
+
+Yes, **constructor is not a constructor**.
 
 Issues
 ------
