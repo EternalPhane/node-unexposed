@@ -217,10 +217,10 @@ MIT License (Expat). See [LICENSE.md](LICENSE.md) for details.
 [snyk-img]: https://snyk.io/test/github/rsp/node-unexposed/badge.svg
 [david-url]: https://david-dm.org/rsp/node-unexposed
 [david-img]: https://david-dm.org/rsp/node-unexposed/status.svg
-[install-img]: https://nodei.co/npm/node-unexposed.png?compact=true
-[downloads-img]: https://img.shields.io/npm/dt/node-unexposed.svg
-[license-img]: https://img.shields.io/npm/l/node-unexposed.svg
-[stats-url]: http://npm-stat.com/charts.html?package=node-unexposed
+[install-img]: https://nodei.co/npm/unexposed.png?compact=true
+[downloads-img]: https://img.shields.io/npm/dt/unexposed.svg
+[license-img]: https://img.shields.io/npm/l/unexposed.svg
+[stats-url]: http://npm-stat.com/charts.html?package=unexposed
 [github-follow-url]: https://github.com/rsp
 [github-follow-img]: https://img.shields.io/github/followers/rsp.svg?style=social&label=Follow
 [twitter-follow-url]: https://twitter.com/intent/follow?screen_name=pocztarski
