@@ -13,8 +13,7 @@ unexposed
 
 TL;DR
 -
-### Before
--
+Before:
 ```js
 > x = function () {};
 [Function: x]
@@ -26,7 +25,7 @@ true
 ReferenceError: AsyncFunction is not defined
 ```
 
-### After
+After:
 ```js
 > x = function () {};
 [Function: x]
