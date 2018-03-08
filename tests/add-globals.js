@@ -1,8 +1,8 @@
-const test = require('tape');
+const tap = require('tap');
 
 const { AsyncFunction: AF, GeneratorFunction: GF, Generator: G, addGlobals } = require('..');
 
-test('addGlobals tests', (t) => {
+tap.test('addGlobals tests', (t) => {
   t.plan(9);
 
   t.equal(typeof AsyncFunction, 'undefined', 'AsyncFunction should not be defined');

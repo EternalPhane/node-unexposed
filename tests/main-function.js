@@ -1,10 +1,10 @@
-const test = require('tape');
+const tap = require('tap');
 
 const unexposed = require('..');
 
 const { AsyncFunction: AF, GeneratorFunction: GF, Generator: G } = unexposed;
 
-test('calling module tests', (t) => {
+tap.test('calling module tests', (t) => {
   t.plan(9);
 
   t.equal(typeof AsyncFunction, 'undefined', 'AsyncFunction should not be defined');

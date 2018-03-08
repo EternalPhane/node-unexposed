@@ -1,10 +1,10 @@
 'use strict';
 
-const test = require('tape');
+const tap = require('tap');
 
 const { GeneratorFunction } = require('..');
 
-test('GeneratorFunction tests', (t) => {
+tap.test('GeneratorFunction tests', (t) => {
   t.plan(6);
 
   t.ok(GeneratorFunction, 'GeneratorFunction should be defined');

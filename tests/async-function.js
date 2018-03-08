@@ -1,10 +1,10 @@
 'use strict';
 
-const test = require('tape');
+const tap = require('tap');
 
 const { AsyncFunction } = require('..');
 
-test('AsyncFunction tests', (t) => {
+tap.test('AsyncFunction tests', (t) => {
   t.plan(6);
 
   t.ok(AsyncFunction, 'AsyncFunction should be defined');
