@@ -35,5 +35,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
     "tap": "^11.1.2"
+  },
+  "dependencies": {
+    "the-global-object": "^1.0.0"
   }
 }
