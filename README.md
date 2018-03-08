@@ -11,6 +11,35 @@ unexposed
 [![Downloads][downloads-img]][stats-url]
 [![License][license-img]][license-url]
 
+TL;DR
+-
+### Before
+-
+```js
+> x = function () {};
+[Function: x]
+> x instanceof Function;
+true
+> x = async function () {};
+[AsyncFunction: x]
+> x instanceof AsyncFunction;
+ReferenceError: AsyncFunction is not defined
+```
+
+### After
+```js
+> x = function () {};
+[Function: x]
+> x instanceof Function;
+true
+> x = async function () {};
+[AsyncFunction: x]
+> x instanceof AsyncFunction;
+true
+```
+
+Intro
+-
 JavaScript has some global objects that are not really exposed as global objects.
 I call them **unexposed objects**:
 
@@ -40,8 +69,14 @@ npm install unexposed
 
 Usage
 -
+Using local variables:
 ```js
 const { AsyncFunction } = require('unexposed');
+```
+
+Adding global variables:
+```js
+require('unexposed').addGlobals();
 ```
 
 Returned Objects
