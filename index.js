@@ -6,6 +6,8 @@ const Generator = require('./generator');
 
 const addGlobals = () => Object.assign(global, { AsyncFunction, GeneratorFunction, Generator });
 
-module.exports = {
+Object.assign(addGlobals, {
   AsyncFunction, GeneratorFunction, Generator, addGlobals,
-};
+});
+
+module.exports = addGlobals;

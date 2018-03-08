@@ -78,6 +78,10 @@ Adding global variables:
 ```js
 require('unexposed').addGlobals();
 ```
+or:
+```js
+require('unexposed')();
+```
 
 Returned Objects
 -
